@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/* Global layout and typography */
+html, body {
+  background-color: theme('colors.gray.50');
+  color: theme('colors.gray.900');
+  font-family: system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Fade-in animation for chat messages */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Blinking animation for typing indicator */
+@keyframes blink {
+  0%, 20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.typing::after {
+  content: " ...";
+  animation: blink 1.5s infinite;
+}
+
+/* Chat container layout */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 20rem;
+  overflow-y: auto;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  background: linear-gradient(to bottom, #f9fafb, #ffffff);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  gap: 0.75rem;
+}
+
+/* User message bubble */
+.chat-user {
+  background-color: #dcfce7; /* green-100 */
+  color: #14532d; /* green-900 */
+  align-self: flex-end;
+  margin-left: auto;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  max-width: 80%;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Assistant message bubble */
+.chat-assistant {
+  background-color: #e0e7ff; /* indigo-100 */
+  color: #312e81; /* indigo-900 */
+  align-self: flex-start;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  max-width: 80%;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* System or notification messages */
+.chat-system {
+  background-color: #e5e7eb; /* gray-200 */
+  color: #374151; /* gray-700 */
+  font-size: 0.875rem;
+  font-style: italic;
+  padding: 0.5rem;
+  border-radius: 0.75rem;
+}
+
+/* Scrollbar styling */
+.chat-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
