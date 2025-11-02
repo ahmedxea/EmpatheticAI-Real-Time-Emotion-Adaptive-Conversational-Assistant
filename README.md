@@ -1,25 +1,28 @@
 # 🤖 Empathetic AI
 
-**Empathetic AI** is an **emotion-aware chatbot** that adapts its responses to your **mood in real time**.  
+> **Empathetic AI** is an **emotion-aware chatbot** that adapts its responses to your **mood in real time**.  
 It detects facial expressions through your webcam and adjusts tone dynamically using **local AI models** via Ollama.
 
 ---
+## 🎥 Demo
 
+![Empathetic AI Demo](path/to/demo.gif)
+--
 ## 🌟 What It Does
-- 🎭 Detects emotions like *happy, sad, angry, surprised, neutral*, etc.  
-- 💬 Responds with an adaptive tone that matches your mood  
-- ⚙️ Runs locally using **FastAPI + Ollama (llama3)**  
-- 🎨 Features a clean, ChatGPT-style UI built with React + Tailwind  
+- Detects emotions like *happy, sad, angry, surprised, neutral*, etc.
+- Responds with an adaptive tone that matches your mood  
+- Runs locally using **FastAPI + Ollama (llama3)**  
+- Features a clean, ChatGPT-style UI built with React + Tailwind  
 
 ---
 
-## 🧩 Tech Stack
+## Tech Stack
 **Frontend:** React, Vite, TypeScript, TailwindCSS, face-api.js  
 **Backend:** FastAPI, Python, Ollama  
 
 ---
 
-## 🚀 Setup
+## Setup
 
 ### 🖥 Backend
 ```bash
@@ -28,28 +31,36 @@ python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 uvicorn app:app --reload --port 8001
+```
+----
+### 💻 Frontend
 
------
+```bash
 
-Run Ollama:
-
-ollama serve
-
-
-Test the API:
-http://127.0.0.1:8001/test-ollama
-
-💻 Frontend
 cd web
 npm install
 npm run dev
 
+```
+---
+### 🧠 Run Ollama
+```bash
 
-Open http://localhost:5173
+ollama serve
+```
+----
+Test the API:
+http://127.0.0.1:8001/test-ollama
 
-Allow camera access when prompted.
+Then open:
+http://localhost:5173
 
+and allow camera access when prompted.
+
+---
 📁 Project Structure
+
+```bash
 empathetic-ai/
 ├── server/         # FastAPI backend
 │   ├── app.py
@@ -60,8 +71,5 @@ empathetic-ai/
     │   ├── Chat.tsx
     │   └── EmotionProbe.tsx
     └── public/models/ (face-api.js models)
-
-💡 Concept
-
-Empathetic AI combines emotional intelligence with artificial intelligence —
-a chatbot that doesn’t just respond, it feels your vibe and adapts its tone accordingly.
+```
+💡 Concept: Empathetic AI combines emotional intelligence with artificial intelligence, a chatbot that doesn’t just respond, it feels your vibe and adapts its tone accordingly.
