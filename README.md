@@ -6,7 +6,7 @@ It detects facial expressions through your webcam and adjusts tone dynamically u
 ---
 ## 🎥 Demo
 
-![Empathetic AI Demo](path/to/demo.gif)
+![Empathetic AI Demo](web/public/demo.gif)
 --
 ## 🌟 What It Does
 - Detects emotions like *happy, sad, angry, surprised, neutral*, etc.
